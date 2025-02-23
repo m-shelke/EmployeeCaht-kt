@@ -3,9 +3,21 @@ import kotlin.script.experimental.jvm.util.classpathFromClass
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+//        id("com.android.application")
+//
+//    //    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
+
 }
 
-plugins "com.google.gms.google-services"
+//plugins "com.google.gms.google-services"
+
+//plugins {
+//    // Add the dependency for the Google services Gradle plugin
+//    id("com.google.gms.google-services") version "4.4.2" apply false
+//}
+
 
 android {
     namespace = "com.example.employeecahtkt"
@@ -86,12 +98,28 @@ dependencies {
     implementation ("com.github.sharish:ShimmerRecyclerView:v1.3")
 
 
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.9.0"))
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-auth")
+
+
+    // Add the dependencies for any other desired Firebase products
+    // https://firebase.google.com/docs/android/setup#available-libraries
+
 }
 
-buildscript {
-
-    dependencies{
-        classpath ("com.google.gms:google-services:4.4.2")
-
-    }
-}
+//buildscript {
+//
+//    dependencies{
+//        classpath ("com.google.gms:google-services:4.4.2")
+//
+//    }
+//}

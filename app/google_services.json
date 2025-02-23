@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "336627028816",
+    "project_id": "employee-s-chat",
+    "storage_bucket": "employee-s-chat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336627028816:android:8a60186496edd4e22ad255",
+        "android_client_info": {
+          "package_name": "com.example.employeecahtkt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO-GY5nq28pqZbJZarXjEHCh17-spIxhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
