@@ -68,6 +68,7 @@
 
 
     <TextView
+        android:id="@+id/phoneNumberLable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Verify +912003154789"

@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
 
 //        id("com.android.application")
-//
+
 //    //    // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
 
@@ -68,10 +68,10 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //    Lottie animation Dependency
-    implementation("com.airbnb.android:lottie:4.0.0")
+    implementation("com.airbnb.android:lottie:6.6.2")
 
     //country code picker dependency
-    implementation ("com.hbb20:ccp:2.6.0")
+    implementation ("com.hbb20:ccp:2.7.3")
 
     //    GIF dependency
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.29")
@@ -84,9 +84,9 @@ dependencies {
 
         implementation ("de.hdodenhof:circleimageview:3.1.0")
 
-    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     // Skip this if you don't want to use integration libraries or configure Glide.
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
 
     // Check the maven central badge for latest $version
     implementation ("com.github.pgreze:android-reactions:1.6")
@@ -104,22 +104,14 @@ dependencies {
 
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
-    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-analytics:22.2.0")
 
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-auth:23.2.0")
 
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 
 }
-
-//buildscript {
-//
-//    dependencies{
-//        classpath ("com.google.gms:google-services:4.4.2")
-//
-//    }
-//}
