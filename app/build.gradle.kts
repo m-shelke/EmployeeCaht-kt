@@ -1,7 +1,11 @@
+import kotlin.script.experimental.jvm.util.classpathFromClass
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
+
+plugins "com.google.gms.google-services"
 
 android {
     namespace = "com.example.employeecahtkt"
@@ -57,6 +61,9 @@ dependencies {
     //country code picker dependency
     implementation ("com.hbb20:ccp:2.6.0")
 
+    //    GIF dependency
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.29")
+
 
 //        implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview-compose:3.1.0")
 
@@ -69,4 +76,22 @@ dependencies {
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
 
+    // Check the maven central badge for latest $version
+    implementation ("com.github.pgreze:android-reactions:1.6")
+
+    implementation ("com.github.3llomi:CircularStatusView:V1.0.3")
+
+    implementation ("com.github.OMARIHAMZA:StoryView:1.0.2-alpha")
+
+    implementation ("com.github.sharish:ShimmerRecyclerView:v1.3")
+
+
+}
+
+buildscript {
+
+    dependencies{
+        classpath ("com.google.gms:google-services:4.4.2")
+
+    }
 }

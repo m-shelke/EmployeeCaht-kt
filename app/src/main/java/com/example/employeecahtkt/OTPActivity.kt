@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.devlomi.circularstatusview.CircularStatusView
+import omari.hamza.storyview.StoryView
 
 class OTPActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,5 @@ class OTPActivity : AppCompatActivity() {
             insets
         }
 
-        
     }
 }

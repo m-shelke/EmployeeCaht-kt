@@ -1,40 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OTPActivity">
+    tools:context=".OTPActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:background="#FEFEFE">
 
-    <com.mukeshsolanki.OtpView
-        android:id="@+id/otp_view"
+<!--    <com.mukeshsolanki.OtpView-->
+<!--        android:id="@+id/otp_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="72dp"-->
+<!--        android:inputType="text"-->
+<!--        android:itemBackground="@drawable/bg_otp_item"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        app:OtpHideLineWhenFilled="true"-->
+<!--        app:OtpItemCount="6"-->
+<!--        app:OtpItemSpacing="6dp"-->
+<!--        app:OtpLineColor="@color/otp_item_state"-->
+<!--        app:OtpState_filled="true"-->
+<!--        app:OtpViewType="line"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/profile_image"-->
+<!--        android:layout_width="96dp"-->
+<!--        android:layout_height="96dp"-->
+<!--        android:src="@drawable/profile"-->
+<!--        app:civ_border_width="2dp"-->
+<!--        app:civ_border_color="#FF000000"/>-->
+
+<!--    <com.devlomi.circularstatusview.CircularStatusView-->
+<!--        android:id="@+id/circular_status_view"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        app:portion_color="@color/colorAccent"-->
+<!--        app:portion_spacing="4dp"-->
+<!--        app:portion_width="4dp"-->
+<!--        app:portions_count="8" />-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:src="@mipmap/ic_launcher"-->
+<!--        android:scaleType="centerCrop"/>-->
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifCelebration"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/otp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify +912003154789"
+        android:textStyle="bold|normal"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="#6864F6"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:inputType="text"
-        android:itemBackground="@drawable/bg_otp_item"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        app:OtpHideLineWhenFilled="true"
-        app:OtpItemCount="6"
-        app:OtpItemSpacing="6dp"
-        app:OtpLineColor="@color/otp_item_state"
-        app:OtpState_filled="true"
-        app:OtpViewType="line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Enter the OTP code to Verify your Phone Number"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:textColor="#3C3B3B"
+        android:layout_marginTop="5dp"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:src="@drawable/profile"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:padding="15dp"
+                    android:layout_margin="15dp"
+                    android:background="@color/white">
+
+                        <com.mukeshsolanki.OtpView
+                            android:id="@+id/otp_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:inputType="number"
+                            android:itemBackground="#D1DBFC"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            app:OtpHideLineWhenFilled="true"
+                            app:OtpItemCount="6"
+                            app:OtpItemSpacing="5dp"
+                            app:OtpLineColor="#D36B5C"
+                            app:OtpState_filled="true"
+                            app:OtpViewType="line"
+                            android:layout_marginTop="5dp"
+                            android:focusableInTouchMode="true"/>
+
+                    <!--MaterialButton: Click to send OTP to input phone number
+             -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/continueBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold|normal"
+                        android:textSize="16dp"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="10dp"
+                        android:text="Continue..."
+                        android:minHeight="60dp"
+                        app:cornerRadius="8dp"/>
+
+                </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
