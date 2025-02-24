@@ -8,5 +8,7 @@
     <string name="one_time_password">One Time Password</string>
     <string name="phone_number">Phone Number..!!</string>
     <string name="does_not_recieve_otp_resend"><b>Does Not Received OTP..?</b> <b>Resend..!!</b></string>
+    <string name="profele_information">Profile Information</string>
+    <string name="clicked">Clicked</string>
 
 </resources>

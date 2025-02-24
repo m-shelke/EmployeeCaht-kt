@@ -1,4 +1,3 @@
-import kotlin.script.experimental.jvm.util.classpathFromClass
 
 plugins {
     alias(libs.plugins.android.application)
@@ -10,14 +9,6 @@ plugins {
     id("com.google.gms.google-services")
 
 }
-
-//plugins "com.google.gms.google-services"
-
-//plugins {
-//    // Add the dependency for the Google services Gradle plugin
-//    id("com.google.gms.google-services") version "4.4.2" apply false
-//}
-
 
 android {
     namespace = "com.example.employeecahtkt"
@@ -63,6 +54,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.database.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -109,6 +101,14 @@ dependencies {
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth:23.2.0")
+
+    // Add the dependency for the Realtime Database library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-database")
+
+    // Add the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-storage")
 
 
     // Add the dependencies for any other desired Firebase products

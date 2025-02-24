@@ -116,7 +116,7 @@
                             app:OtpHideLineWhenFilled="true"
                             app:OtpItemCount="6"
                             app:OtpItemSpacing="5dp"
-                            app:OtpLineColor="#D36B5C"
+                            app:OtpLineColor="@color/black"
                             app:OtpState_filled="true"
                             app:OtpViewType="line"
                             android:layout_marginTop="5dp"

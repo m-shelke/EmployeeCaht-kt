@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.employeecahtkt.databinding.ActivityVerificationBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.hbb20.CountryCodePicker
 
 class VerificationActivity : AppCompatActivity() {
 
@@ -49,6 +50,8 @@ class VerificationActivity : AppCompatActivity() {
             intent.putExtra("phoneNumber",binding!!.phoneNumberEt.text.toString())
             startActivity(intent)
         }
+
+
 
     }
 }

@@ -42,11 +42,11 @@ class OTPActivity : AppCompatActivity() {
             insets
         }
 
-        dialog = ProgressDialog(this)
+        dialog = ProgressDialog(this@OTPActivity)
         dialog!!.setMessage("Sending OTP....")
         dialog!!.setCancelable(false)
-        dialog!!.setIcon(R.drawable.otp)
-        dialog!!.setTitle("OTP Processing..!!")
+        dialog!!.setIcon(R.drawable.proccess)
+        dialog!!.setTitle("OTP in Processing..!!")
         dialog!!.show()
 
         auth = FirebaseAuth.getInstance()
@@ -95,9 +95,13 @@ class OTPActivity : AppCompatActivity() {
                         val intent = Intent(this@OTPActivity, SetUpProfileActivity::class.java)
                         startActivity(intent)
                         finishAffinity()
-                    }else{
+                    } else {
 
-                        Toast.makeText(this@OTPActivity,"Verification Failed..!!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@OTPActivity,
+                            "Verification Failed..!!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
         }
