@@ -5,14 +5,14 @@
     <item>
 
         <shape>
-            <solid android:color="#D1DBFC"/>
+            <solid android:color="#B2DFDB"/>
             <corners
                 android:bottomRightRadius="45dp"
                 android:topRightRadius="45dp"
                 android:topLeftRadius="45dp"/>
 
             <stroke android:width="2dp"
-                android:color="#D1DBFC"/>
+                android:color="#B2DFDB"/>
 
         </shape>
     </item>
@@ -24,7 +24,7 @@
 
         <shape>
 
-            <solid android:color="#D1DBFC"/>
+            <solid android:color="#B2DFDB"/>
             <corners
                 android:bottomRightRadius="45dp"
                 android:topRightRadius="45dp"

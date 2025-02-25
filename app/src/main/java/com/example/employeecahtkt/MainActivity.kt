@@ -41,16 +41,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
-
-        binding!!.main.setOnClickListener{
-            startActivity(Intent(this@MainActivity,ChatActivity::class.java))
-        }
-
-
-
-
-
         dialog = ProgressDialog(this@MainActivity)
         dialog!!.setMessage("Uploading Images....")
         dialog!!.setCancelable(false)

@@ -1,12 +1,14 @@
 package com.example.employeecahtkt.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.bumptech.glide.Glide
+import com.example.employeecahtkt.ChatActivity
 import com.example.employeecahtkt.R
 import com.example.employeecahtkt.databinding.ItemProfileBinding
 import com.example.employeecahtkt.models.Users
@@ -36,5 +38,15 @@ class UsersAdapter(var context: Context,var userList: ArrayList<Users>) :
             .load(position.profileImage)
             .placeholder(R.drawable.person)
             .into(holder.binding.profileIv)
+
+        holder.itemView.setOnClickListener{
+            var intent = Intent(context,ChatActivity::class.java)
+
+            intent.putExtra("name",position.name)
+            intent.putExtra("image",position.profileImage)
+            intent.putExtra("uid",position.uid)
+
+            context.startActivity(intent)
+        }
     }
 }
