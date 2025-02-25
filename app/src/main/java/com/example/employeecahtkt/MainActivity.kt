@@ -1,6 +1,7 @@
 package com.example.employeecahtkt
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,9 +33,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-
-
-
         setContentView(binding!!.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -42,6 +40,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+
+        binding!!.main.setOnClickListener{
+            startActivity(Intent(this@MainActivity,ChatActivity::class.java))
+        }
+
+
+
+
 
         dialog = ProgressDialog(this@MainActivity)
         dialog!!.setMessage("Uploading Images....")

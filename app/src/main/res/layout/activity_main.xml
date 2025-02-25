@@ -45,7 +45,7 @@
             android:id="@+id/mRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/item_profile" />
+            tools:listitem="@layout/item_profile"/>
 
     </LinearLayout>
 
