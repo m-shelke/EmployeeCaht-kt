@@ -32,7 +32,6 @@ class SetUpProfileActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivitySetUpProfileBinding.inflate(layoutInflater)
-
         setContentView(binding!!.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -53,7 +52,7 @@ class SetUpProfileActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        binding!!.cameraFab.setOnClickListener{
+        binding!!.profileIv.setOnClickListener{                 /////////////
             val intent = Intent()
             intent.action = Intent.ACTION_GET_CONTENT
             intent.type = "image/*"
@@ -70,7 +69,7 @@ class SetUpProfileActivity : AppCompatActivity() {
             dialog!!.show()
 
             if (selectedImage != null){
-                val reference = storage!!.reference.child("profile")
+                val reference = storage!!.reference.child("Profile")
                     .child(auth!!.uid!!)
 
                 reference.putFile(selectedImage!!).addOnCompleteListener { task ->
@@ -80,12 +79,11 @@ class SetUpProfileActivity : AppCompatActivity() {
 
                             val imageUrl = uri.toString()
                             val uid = auth!!.uid
-                            val phone = auth!!.currentUser!!.phoneNumber
-
                             val name:String = binding!!.editName.text.toString()
+                            val phone = auth!!.currentUser!!.phoneNumber
                             val user = Users(uid,name,phone,imageUrl)
 
-                            database!!.reference!!
+                            database!!.reference
                                 .child("users")
                                 .child(uid!!)
                                 .setValue(user)
@@ -97,19 +95,20 @@ class SetUpProfileActivity : AppCompatActivity() {
                                     finish()
                                 }
                         }
-                    }else{
+                    }
+                    else{
 
                         Toast.makeText(this@SetUpProfileActivity,"Image Not Selected..!!",Toast.LENGTH_LONG).show()
 
                         val uid = auth!!.uid
                         val phone = auth!!.currentUser!!.phoneNumber.toString()
                         val name:String = binding!!.editName.text.toString()
-                        val users = Users(uid,name,phone,"No Image")
+                        val user = Users(uid,name,phone,"No Image")
 
                         database!!.reference
                             .child("users")
                             .child(uid!!)
-                            .setValue(users)
+                            .setValue(user)
                             .addOnCanceledListener{
                                 dialog!!.dismiss()
 
@@ -137,7 +136,7 @@ class SetUpProfileActivity : AppCompatActivity() {
                 val storage = FirebaseStorage.getInstance()
                 val time = Date().time
                 val reference = storage.reference
-                    .child("profile")
+                    .child("Profile")
                     .child(time.toString() + "")
 
                 reference.putFile(uri!!).addOnCompleteListener{ task->
@@ -150,14 +149,17 @@ class SetUpProfileActivity : AppCompatActivity() {
                             database!!.reference
                                 .child("users")
                                 .child(FirebaseAuth.getInstance().uid!!)
-                                .updateChildren(obj).addOnSuccessListener {  }
+                                .updateChildren(obj)
+
+//                                .addOnSuccessListener {  }       ///////// why need this
                         }
                     }
 
                 }
+
+                binding!!.profileIv.setImageURI(data.data)
+                selectedImage = data.data
             }
-            binding!!.profileIv.setImageURI(data.data)
-            selectedImage = data.data
         }
     }
 }

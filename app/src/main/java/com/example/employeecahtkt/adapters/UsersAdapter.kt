@@ -13,12 +13,10 @@ import com.example.employeecahtkt.R
 import com.example.employeecahtkt.databinding.ItemProfileBinding
 import com.example.employeecahtkt.models.Users
 
-class UsersAdapter(var context: Context,var userList: ArrayList<Users>) :
-    RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
+class UsersAdapter(var context: Context,var userList: ArrayList<Users>) :RecyclerView.Adapter<UsersAdapter.UserViewHolder>(){
 
     inner  class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val binding : ItemProfileBinding = ItemProfileBinding.bind(itemView)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -26,27 +24,27 @@ class UsersAdapter(var context: Context,var userList: ArrayList<Users>) :
         return UserViewHolder(view)
     }
 
-    override fun getItemCount(): Int = userList.size
-
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
-        var position = userList[position]
+        var user = userList[position]
 
-        holder.binding.userName.text = position.name
+        holder.binding.userNameTv.text = user.name
 
         Glide.with(context)
-            .load(position.profileImage)
+            .load(user.profileImage)
             .placeholder(R.drawable.person)
             .into(holder.binding.profileIv)
 
         holder.itemView.setOnClickListener{
             var intent = Intent(context,ChatActivity::class.java)
 
-            intent.putExtra("name",position.name)
-            intent.putExtra("image",position.profileImage)
-            intent.putExtra("uid",position.uid)
+            intent.putExtra("name",user.name)
+            intent.putExtra("image",user.profileImage)
+            intent.putExtra("uid",user.uid)
 
             context.startActivity(intent)
         }
     }
+
+    override fun getItemCount(): Int = userList.size
 }

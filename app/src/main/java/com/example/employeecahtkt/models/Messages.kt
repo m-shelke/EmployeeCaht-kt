@@ -1,19 +1,17 @@
 package com.example.employeecahtkt.models
 
-import com.google.firebase.Timestamp
-
-class MessageModel {
+class Messages {
 
     var messageId:String? = null
     var message:String? = null
     var senderId:String? = null
     var imageUrl:String? = null
-    var timeStamp:Long? = 0
+    var timeStamp:Long = 0
 
     constructor()
 
-    constructor(messageId: String?,senderId:String?,timestamp:Long){
-        this.messageId = messageId
+    constructor(message: String?,senderId:String?,timeStamp:Long){
+        this.message = message
         this.senderId = senderId
         this.timeStamp = timeStamp
     }

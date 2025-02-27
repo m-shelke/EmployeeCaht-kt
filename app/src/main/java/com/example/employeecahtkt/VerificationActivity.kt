@@ -21,10 +21,7 @@ class VerificationActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivityVerificationBinding.inflate(layoutInflater)
-
         setContentView(binding!!.root)
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -46,12 +43,9 @@ class VerificationActivity : AppCompatActivity() {
 
         binding!!.sendOtpBtn.setOnClickListener {
 
-            val intent = Intent(this@VerificationActivity,OTPActivity::class.java)
-            intent.putExtra("phoneNumber",binding!!.phoneNumberEt.text.toString())
+            val intent = Intent(this@VerificationActivity, OTPActivity::class.java)
+            intent.putExtra("phoneNumber", binding!!.phoneNumberEt.text.toString())
             startActivity(intent)
         }
-
-
-
     }
 }

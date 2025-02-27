@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.internal.sharedruntime.support.classFilePathCandidatesFor
+
 pluginManagement {
     repositories {
         google {
@@ -17,10 +19,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        jcenter()
 
         maven ("https://jitpack.io")
-
-        jcenter()
 
     }
 }

@@ -23,10 +23,11 @@ class MainActivity : AppCompatActivity() {
     var binding : ActivityMainBinding? = null
 
     var database : FirebaseDatabase? = null
-    var usersList : ArrayList<Users>? = null
+    var users : ArrayList<Users>? = null
     var usersAdapter : UsersAdapter? = null
     var dialog : ProgressDialog? = null
-    var users : Users? = null
+    var user : Users? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +50,8 @@ class MainActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance()
 
-        usersList = ArrayList<Users>()
-        usersAdapter = UsersAdapter(this@MainActivity,usersList!!)
+        users = ArrayList<Users>()
+        usersAdapter = UsersAdapter(this@MainActivity,users!!)
 
         val layoutManager = GridLayoutManager(this@MainActivity,2)
         binding!!.mRec.layoutManager = layoutManager
@@ -60,12 +61,10 @@ class MainActivity : AppCompatActivity() {
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
-                    users = snapshot.getValue(Users::class.java)
+                    user = snapshot.getValue(Users::class.java)
                 }
 
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
+                override fun onCancelled(error: DatabaseError) {}
             })
 
         binding!!.mRec.adapter = usersAdapter
@@ -74,22 +73,19 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
 
-                usersList!!.clear()
+                users!!.clear()
 
-                for (snapshot in snapshot.children){
+                for (snapshot1 in snapshot.children){
 
-                    val users : Users? = snapshot.getValue(Users::class.java)
+                    val user : Users? = snapshot1.getValue(Users::class.java)
 
-                    if (!users!!.uid.equals(FirebaseAuth.getInstance().uid)) usersList!!.add(users)
+                    if (!user!!.uid.equals(FirebaseAuth.getInstance().uid)) users!!.add(user)
                 }
-
                 usersAdapter!!.notifyDataSetChanged()
 
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
+            override fun onCancelled(error: DatabaseError) {}
 
         })
     }
@@ -107,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
         val currentId = FirebaseAuth.getInstance().uid
         database!!.reference.child("presence")
-            .child(currentId!!).setValue("Offline")
+            .child(currentId!!).setValue("offline")
 
     }
 }

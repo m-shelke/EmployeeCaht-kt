@@ -33,7 +33,6 @@ class OTPActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivityOtpactivityBinding.inflate(layoutInflater)
-
         setContentView(binding!!.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
